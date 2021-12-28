@@ -2,24 +2,24 @@ import { createServer } from 'http'
 
 import { discordRpc } from './discord-rpc'
 
-export const server = createServer(async (req, res) => {
-  res.setHeader('access-control-allow-origin', 'https://vk.com')
-  res.setHeader('access-control-allow-methods', 'post')
-  res.setHeader('access-control-allow-headers', 'content-type')
-
-  if (req.url !== '/') {
-    res.writeHead(404)
-    return
-  }
-
-  const method = req.method?.toLowerCase()
-
+export const server = createServer((req, res) => {
   try {
+    res.setHeader('access-control-allow-origin', 'https://vk.com')
+    res.setHeader('access-control-allow-methods', 'post')
+    res.setHeader('access-control-allow-headers', 'content-type')
+
+    if (req.url !== '/') {
+      res.writeHead(404)
+      return
+    }
+
+    const method = req.method?.toLowerCase()
+
     switch (method) {
       // do nothing
       case 'options': {
         res.writeHead(204)
-        break
+        return
       }
 
       // update rich presence
@@ -35,12 +35,12 @@ export const server = createServer(async (req, res) => {
         })
 
         res.writeHead(204)
-        break
+        return
       }
 
       default: {
         res.writeHead(405)
-        break
+        return
       }
     }
   } catch (error) {
