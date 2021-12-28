@@ -1,7 +1,7 @@
 {
   "private": true,
   "engines": {
-    "node": "^16.6.2"
+    "node": ">= 14"
   },
   "packageManager": "pnpm@6.24.3",
   "devDependencies": {
