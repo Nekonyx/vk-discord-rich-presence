@@ -1,8 +1,13 @@
-## <center>VK Rich Presence</center>
+# <div align="center">VK Rich Presence</div>
 
-<center>Транслирование текущей песни из VK Музыки в Discord</center>
-<br/>
-<center><img src="docs/rich-presence.png" width="500" /></center>
+<div align="center">
+  Транслирование текущей песни из VK Музыки в Discord
+
+  <br />
+  <br />
+
+  <img src="docs/rich-presence.png" width="500" />
+</div>
 
 ---
 
