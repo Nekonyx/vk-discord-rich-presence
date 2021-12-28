@@ -25,7 +25,7 @@ export const discordRpc = {
 
     await this.client.setActivity({
       largeImageKey: 'logo',
-      largeImageText: opts.title,
+      largeImageText: `${opts.performer} - ${opts.title}`,
       details: opts.title,
       state: `by ${opts.performer}`,
       endTimestamp: new Date(Date.now() + secondsLeft * 1000)
