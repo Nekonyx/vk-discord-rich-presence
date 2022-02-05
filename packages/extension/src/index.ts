@@ -19,7 +19,7 @@ const updateRichPresence = async () => {
   const body = JSON.stringify({
     title: audio[3],
     performer: audio[4],
-    // cover: audio[14].toString().split(',').pop(),
+    cover: audio[14].toString().split(',').pop(),
     duration: audio[5],
     progress: player.getCurrentProgress()
   })

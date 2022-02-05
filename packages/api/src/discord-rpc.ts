@@ -3,7 +3,7 @@ import * as rpc from 'discord-rpc'
 export type RichPresenceUpdateOptions = {
   title: string
   performer: string
-  // cover: string
+  cover: string
   progress: number
   duration: number
 }
@@ -24,7 +24,7 @@ export const discordRpc = {
     const secondsLeft = opts.duration - secondsElapsed
 
     await this.client.setActivity({
-      largeImageKey: 'logo',
+      largeImageKey: opts.cover,
       largeImageText: `${opts.performer} - ${opts.title}`,
       details: opts.title,
       state: `by ${opts.performer}`,
